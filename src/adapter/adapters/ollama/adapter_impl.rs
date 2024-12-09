@@ -63,6 +63,7 @@ impl Adapter for OllamaAdapter {
 	) -> Result<WebRequestData> {
 		let url = Self::get_service_url(model_iden.clone(), service_type);
 
+		// TODO need to verify will Ollama accept same image format
 		OpenAIAdapter::util_to_web_request_data(model_iden, client_config, chat_req, service_type, options_set, url)
 	}
 
